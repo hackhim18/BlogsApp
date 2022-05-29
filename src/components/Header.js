@@ -27,30 +27,29 @@ const Header = () => {
       }}
     >
       <Toolbar>
-        <Typography  variant="h4">
-          BlogsApp
-        </Typography>
+        <Typography  variant="h4">  BlogsApp </Typography>
         { (
           <Box display="flex" marginLeft={"auto"} marginRight="auto">
-            <Tabs
+         <Tabs
               textColor="inherit"
-             // value={value}
-               
+              value={value}
+              onChange={(e, val) => setValue(val)}
             >
               <Tab
-                 
+                //className={classes.font}
+                LinkComponent={Link}
                 to="/blogs"
                 label="All Blogs"
               />
               <Tab
-               /*  className={classes.font}
-                LinkComponent={Link} */
+               // className={classes.font}
+                LinkComponent={Link}
                 to="/myBlogs"
                 label="My Blogs"
               />
               <Tab
-                /* className={classes.font}
-                LinkComponent={Link} */
+                //className={classes.font}
+                LinkComponent={Link}
                 to="/blogs/add"
                 label="Add Blog"
               />
@@ -62,8 +61,8 @@ const Header = () => {
             <>
               {" "}
               <Button
-               /*  LinkComponent={Link}
-                to="/auth"*/
+                LinkComponent={Link}
+                to="/auth"
                 variant="contained" 
                 sx={{ margin: 1, borderRadius: 10 }}
                 color="warning"
@@ -71,8 +70,8 @@ const Header = () => {
                 Login
               </Button>
               <Button
-               /*  LinkComponent={Link}
-                to="/auth"*/
+                LinkComponent={Link}
+                to="/auth"
                 variant="contained" 
                 sx={{ margin: 1, borderRadius: 10 }}
                 color="warning" 
@@ -83,9 +82,9 @@ const Header = () => {
           )}
           {(
             <Button
-             /*  onClick={() => dispath(authActions.logout())}
-              LinkComponent={Link}
-              to="/auth"*/ 
+              //onClick={() => dispath(authActions.logout())}
+              LinkComponent={Link} 
+              to="/auth" 
               variant="contained" 
               sx={{ margin: 1, borderRadius: 10 }}
               color="warning"

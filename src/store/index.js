@@ -8,13 +8,13 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
     },
     logout(state) {
-      localStorage.removeItem("userId");
+     // localStorage.removeItem("userId");
       state.isLoggedIn = false;
     },
   },
 });
 
-export const authActions = authSlice.actions;
+  export const authActions = authSlice.actions;
 
 export const store = configureStore({
   reducer: authSlice.reducer,

@@ -1,14 +1,26 @@
 import Header from "./components/Header";
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Auth from "./components/Auth";
 import Blogs from "./components/Blogs";
 import UserBlogs from "./components/UserBlogs";
 import BlogDetail from "./components/BlogDetail";
 import AddBlog from "./components/AddBlog";
 
+import React, { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import Auth from "./components/Auth";
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "./store";
+
 function App() {
-  return <React.Fragment>
+  //const dispath = useDispatch();
+
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  console.log(isLoggedIn);
+  /* useEffect(() => {
+    if (localStorage.getItem("userId")) {
+      dispath(authActions.login());
+    }
+  }, [dispath]); */
+  return ( <React.Fragment>
     <header>
       <Header />
     </header>
@@ -22,6 +34,7 @@ function App() {
       </Routes>
    </main>
   </React.Fragment>
+  );
 }
 
 export default App;

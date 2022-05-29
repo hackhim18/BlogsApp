@@ -9,15 +9,15 @@ import {
   Tab,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-//import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../store";
-//import { useStyles } from "./utils";
+import { useStyles } from "./utils";
 const Header = () => {
- /*  const classes = useStyles();
+  const classes = useStyles();
   const dispath = useDispatch();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
-*/
-  const [value, setValue] = useState(); 
+
+  const [value, setValue] = useState();
   return (
     <AppBar
       position="sticky"
@@ -27,28 +27,30 @@ const Header = () => {
       }}
     >
       <Toolbar>
-        <Typography  variant="h4">  BlogsApp </Typography>
-        { (
+        <Typography className={classes.font} variant="h4">
+          BlogsApp
+        </Typography>
+        {isLoggedIn && (
           <Box display="flex" marginLeft={"auto"} marginRight="auto">
-         <Tabs
+            <Tabs
               textColor="inherit"
               value={value}
               onChange={(e, val) => setValue(val)}
             >
               <Tab
-                //className={classes.font}
+                className={classes.font}
                 LinkComponent={Link}
                 to="/blogs"
                 label="All Blogs"
               />
               <Tab
-               // className={classes.font}
+                className={classes.font}
                 LinkComponent={Link}
                 to="/myBlogs"
                 label="My Blogs"
               />
               <Tab
-                //className={classes.font}
+                className={classes.font}
                 LinkComponent={Link}
                 to="/blogs/add"
                 label="Add Blog"
@@ -57,13 +59,13 @@ const Header = () => {
           </Box>
         )}
         <Box display="flex" marginLeft="auto">
-          { (
+          {!isLoggedIn && (
             <>
               {" "}
               <Button
                 LinkComponent={Link}
                 to="/auth"
-                variant="contained" 
+                variant="contained"
                 sx={{ margin: 1, borderRadius: 10 }}
                 color="warning"
               >
@@ -72,25 +74,25 @@ const Header = () => {
               <Button
                 LinkComponent={Link}
                 to="/auth"
-                variant="contained" 
+                variant="contained"
                 sx={{ margin: 1, borderRadius: 10 }}
-                color="warning" 
+                color="warning"
               >
                 Signup
               </Button>
             </>
           )}
-          {(
+          {isLoggedIn && (
             <Button
-              //onClick={() => dispath(authActions.logout())}
-              LinkComponent={Link} 
-              to="/auth" 
-              variant="contained" 
+              onClick={() => dispath(authActions.logout())}
+              LinkComponent={Link}
+              to="/auth"
+              variant="contained"
               sx={{ margin: 1, borderRadius: 10 }}
               color="warning"
             >
               Logout
-            </Button> 
+            </Button>
           )}
         </Box>
       </Toolbar>

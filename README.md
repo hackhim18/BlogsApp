@@ -68,4 +68,4 @@ All the models can be found in the models directory created using mongoose.
 - title (String)
 - content (String)
 - imagePath (String)
-- 
+

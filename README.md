@@ -41,12 +41,7 @@ A blog app with the following features.
 
 Unlogged in users can do the following:
 
-- View all posts.
-- View one post's content by clicking on it.
 - Signup.
-
-In addition to the above points, logged in users can do the following:
-
 - Login or logout.
 - Create a new post.
 - View/Edit/delete their posts.

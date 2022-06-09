@@ -39,7 +39,7 @@ The main technologies used to build this application are:
 
 A blog app with the following features.
 
-Unlogged in users can do the following:
+Users can do the following:
 
 - Signup.
 - Login or logout.

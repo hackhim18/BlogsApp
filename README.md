@@ -44,7 +44,7 @@ Unlogged in users can do the following:
 - Signup.
 - Login or logout.
 - Create a new post.
-- View/Edit/delete their posts.
+- View/Edit/delete/like posts.
 
 ## Database
 

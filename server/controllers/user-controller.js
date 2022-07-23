@@ -29,6 +29,7 @@ export const signup = async (req, res, next) => {
   }
  const hashedPassword = bcrypt.hashSync(password);
 
+  
   const user = new User({
     name,
     email,
@@ -39,7 +40,8 @@ export const signup = async (req, res, next) => {
   try {
     await user.save();
   } catch (err) {
-    return console.log(err);
+   
+     return console.log(err);
   }
   return res.status(201).json({ user });
 };

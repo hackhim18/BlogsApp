@@ -30,6 +30,7 @@ export const addBlog = async (req, res, next) => {
   const blog = new Blog({
     title,
     description,
+     
     image,
     user,
   });
